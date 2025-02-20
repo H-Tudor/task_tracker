@@ -4,6 +4,30 @@ This is a solution submission for the Task Tracker (beginner) project from [Road
 
 The full project requirements can be found at: https://roadmap.sh/projects/task-tracker
 
+## How to run:
+
+```
+pip install git+https://github.com/H-Tudor/task_tracker
+task-cli add "Title"
+```
+
+Namings:
+- the package is called *task-tracker*
+- the module is *task*
+- the utility is *task-cli*
+
+```
+task-cli <operation> <param1> <param2>
+```
+
+Implemented Operations and parameters
+- add(description)
+- update(id, description)
+- delete(id)
+- mark-in-progress(id)
+- mark-done(id)
+- list(status ? (`<empty>`, `todo`, `in-progress`, `done`))
+
 ## Features
 
 As described in the above link, this application implements the CRUD operations on the Task Entity and persists 
@@ -34,30 +58,3 @@ This project did not allow usage of external libraries & frameworks and enforced
 - For development, the UV package / project manager was used along side pytest for unit-testing and ruff for linting & formatting 
 - If not for the above constraints, I would have used Typer and SqlModel
 - data I/O was implemented by the described interface, but internally I used a slight variation on names
-
-## How to run:
-
-```
-pip install https://github.com/H-Tudor/task_tracker
-task add "Title"
-```
-
-Where operations:
-- add
-    - param1: description
-    - param2: N/A
-- update
-    - param1: id 
-    - param2: description
-- delete
-    - param1: id
-    - param2: N/A
-- mark-in-progress
-    - param1: id
-    - param2: N/A
-- mark-done
-    - param1: id
-    - param2: N/A
-- list
-    - param1: status (`<empty>`, `todo`, `in-progress`, `done`)
-    - param2: N/A
