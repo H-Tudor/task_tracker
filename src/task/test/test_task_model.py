@@ -26,16 +26,27 @@ def test_validation():
     now = datetime.now()
     with pytest.raises(ValueError):
         Task.validate(None, "Hello, World!", TaskStatus.TODO, now, now)
+    with pytest.raises(ValueError):
         Task.validate(0, "Hello, World!", TaskStatus.TODO, now, now)
+    with pytest.raises(ValueError):
         Task.validate(-1, "Hello, World!", TaskStatus.TODO, now, now)
+    with pytest.raises(ValueError):
         Task.validate(1, None, TaskStatus.TODO, now, now)
+    with pytest.raises(ValueError):
         Task.validate(1, "", TaskStatus.TODO, now, now)
+    with pytest.raises(ValueError):
         Task.validate(1, "Hello, World!", None, now, now)
+    with pytest.raises(ValueError):
         Task.validate(1, "Hello, World!", 1, now, now)
+    with pytest.raises(ValueError):
         Task.validate(1, "Hello, World!", "1", now, now)
+    with pytest.raises(ValueError):
         Task.validate(1, "Hello, World!", TaskStatus.TODO, None, now)
+    with pytest.raises(ValueError):
         Task.validate(1, "Hello, World!", TaskStatus.TODO, "", now)
+    with pytest.raises(ValueError):
         Task.validate(1, "Hello, World!", TaskStatus.TODO, now, None)
+    with pytest.raises(ValueError):
         Task.validate(1, "Hello, World!", TaskStatus.TODO, now, "")
 
 
