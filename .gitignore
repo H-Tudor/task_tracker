@@ -12,6 +12,10 @@ wheels/
 # Caches
 .pytest_cache
 .ruff_cache
+.coverage
+.idea
+.vscode
+.vs
 
 # Output file
 data.json
